@@ -16,3 +16,14 @@ resource "aws_vpc" "terraform-vpc" {
     Name = "terraform-git vpc"
   }
 }
+
+
+
+resource "aws_subnet" "terra-pub" {
+  vpc_id     = aws_vpc.terraform-vpc.id
+  cidr_block = "10.20.0.0/24"
+
+  tags = {
+    Name = "terra-git"
+  }
+}
